@@ -1,0 +1,77 @@
+@extends('layout.template.loginRegistTemplate')
+@section('container')
+    <div class="d-flex justify-content-center p-3"  style="margin:0; min-height:100vh; background: url('{{ url('/asset/img/Background.jpg') }}') no-repeat center center fixed; background-size: cover;">
+        <div  class="" style="margin-top: 10px;">
+            <div class=" mt-4 text-center">
+                <h1 style="font-size:30px; text-transform:uppercase; color:#222; letter-spacing:1px;
+      font-family:Playfair Display, serif; font-weight:400;">Learning LEARNING MANAGEMENT SYSTEM</h1>
+                <h1 style="font-size:30px; text-transform:uppercase; color:#222; letter-spacing:1px;
+      font-family:Playfair Display, serif; font-weight:400;"> SMA NEGERI 2 ACEH BARAT DAYA</h1>
+            </div>
+            <div class="card px-1 py-4 mt-4">
+                <div class="card-body">
+                    <form action="{{ route('authenticate') }}" method="POST">
+                        @csrf
+                        <div class="row">
+                            {{-- Start Form --}}
+                            <div class="col-sm-12 mb-3">
+                                <h1>Login</h1>
+                                <span class="text-secondary">Silahkan login untuk melanjutkan.</span>
+                                @if ($hasAdmin == 0)
+                                    <div class="alert alert-warning" role="alert">
+                                        Akun <span class="text-danger">Admin</span> belum dibuat, <a
+                                            href="{{ route('adminRegister') }}">Buat sekarang</a>
+                                    </div>
+                                @endif
+                                @if (session()->has('register-success'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{ session('register-success') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                @endif
+                                @if (session()->has('login-error'))
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        {{ session('login-error') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                @endif
+                                @if (session()->has('logout-success'))
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        {{ session('logout-success') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                @endif
+                                <hr>
+                                <div class="form-group">
+                                    <label for="email">Email : </label>
+                                    <input class="form-control" id="email" type="email" name="email"
+                                        placeholder="Masukan email anda..." required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 mb-4">
+                                <div class="form-group">
+                                    <label for="password">Password : </label>
+                                    <input class="form-control" id="password" type="password" name="password"
+                                        placeholder="Masukan Password anda..." required>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-100 mt-4" type="submit"><i
+                                class="fa-solid fa-right-to-bracket fa-flip-vertical"></i> Login</button>
+                    </form>
+                    {{-- Form Habis --}}
+                    <div class="mt-2">
+                        <hr>
+                        <span class="small text-secondary">Tidak memiliki akun? <a
+                                href="{{ route('register') }}">Register</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

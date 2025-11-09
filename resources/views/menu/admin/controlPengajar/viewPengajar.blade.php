@@ -20,9 +20,9 @@
                         Tambah</button></a> <a href="{{ route('exportPengajar') }}"><button
                         class="btn btn-success animate-btn-small"><i class="fa-solid fa-file-export"></i> Export<span
                             class="small">(.xls)</span></button></a>
-                <button class="btn btn-success animate-btn-small" data-bs-toggle="modal" data-bs-target="#importModal"
+                {{-- <button class="btn btn-success animate-btn-small" data-bs-toggle="modal" data-bs-target="#importModal"
                     type="button"><i class="fa-solid fa-file-import"></i>
-                    Import<span class="small">(.xls, .xlsx)</span></button>
+                    Import<span class="small">(.xls, .xlsx)</span></button> --}}
             </h1>
         </div>
     </div>

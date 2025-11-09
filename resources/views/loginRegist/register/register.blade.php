@@ -2,7 +2,7 @@
 @section('container')
     <div class="row">
         {{-- Bagian Kiri --}}
-        <div class="col-sm-5 col-12 col-md-4" style="margin-top: 50px;">
+        <div class="d-flex flex-column justify-content-center align-items-center" style="background: url('{{ url('/asset/img/Background.jpg') }}') no-repeat center center fixed; background-size: cover;">
 
             {{-- Tampilan animasi untuk perangkat mobile --}}
             <div class="col-sm-7 col-md-8 col-12 text-center d-block d-sm-none">
@@ -10,13 +10,9 @@
             </div>
 
             {{-- Logo CBT --}}
-            <div class="col-12 mt-4">
+            <div class="mt-4">
                 <h1 style="font-size:30px; text-transform:uppercase; color:#222; letter-spacing:1px;
-  font-family:Playfair Display, serif; font-weight:400;">Learning</h1>
-                <h1 style="font-size:30px; text-transform:uppercase; color:#222; letter-spacing:1px;
-  font-family:Playfair Display, serif; font-weight:400;">Management</h1>
-                <h1 style="font-size:30px; text-transform:uppercase; color:#222; letter-spacing:1px;
-  font-family:Playfair Display, serif; font-weight:400;">System</h1>
+      font-family:Playfair Display, serif; font-weight:400;">Learning Management System</h1>
             </div>
 
             {{-- Kartu Registrasi --}}
@@ -31,8 +27,7 @@
                         @if (session()->has('nis-error'))
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 {{ session('nis-error') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif
 
@@ -41,8 +36,8 @@
                             <div class="col-sm-12 mb-3">
                                 <div class="form-group">
                                     <label for="email">Email : </label>
-                                    <input class="form-control" id="email" type="email"
-                                        placeholder="Masukan email anda..." name="email" value="{{ old('email') }}">
+                                    <input class="form-control" id="email" type="email" placeholder="Masukan email anda..."
+                                        name="email" value="{{ old('email') }}">
                                     @error('email')
                                         <div class="text-danger small">
                                             {{ $message }}
@@ -106,8 +101,8 @@
                             <div class="col-sm-12 mb-3">
                                 <div class="form-group">
                                     <label for="email">Nomor Induk Siswa (NIS) : </label>
-                                    <input class="form-control" id="text" name="nis"
-                                        placeholder="Masukan NIS anda..." value="{{ old('nis') }}">
+                                    <input class="form-control" id="text" name="nis" placeholder="Masukan NIS anda..."
+                                        value="{{ old('nis') }}">
                                     @error('nis')
                                         <div class="text-danger small">
                                             {{ $message }}
@@ -137,12 +132,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        {{-- Bagian Kanan --}}
-        <div class="col-sm-7 col-md-8 mt-4 col-12 text-center d-none d-sm-block">
-            <div id="anim" class="p-4"></div>
-            {{-- <img src="asset/img/illustration-1.jpg" width="700px" class=" img-fluid" alt=""> --}}
         </div>
     </div>
 @endsection

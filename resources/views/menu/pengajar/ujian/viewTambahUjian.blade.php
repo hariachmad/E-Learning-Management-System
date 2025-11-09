@@ -149,10 +149,10 @@
                                 @else
                                     Essay
                                 @endif
-                                <button class="btn btn-success animate-btn-small" data-bs-toggle="modal"
+                                {{-- <button class="btn btn-success animate-btn-small" data-bs-toggle="modal"
                                     data-bs-target="#importModal" type="button"><i class="fa-solid fa-file-import"></i>
                                     Import<span class="small">(.xls, .xlsx)</span>
-                                </button>
+                                </button> --}}
                             </h4>
                             {{-- Container untuk Pertanyaan-Pertanyaan --}}
                             <div class="mt-4 bg-white p-4" id="containerPertanyaan">

@@ -4,11 +4,6 @@
         {{-- Bagian Kiri --}}
         <div class="d-flex flex-column justify-content-center align-items-center" style="background: url('{{ url('/asset/img/Background.jpg') }}') no-repeat center center fixed; background-size: cover;">
 
-            {{-- Tampilan animasi untuk perangkat mobile --}}
-            <div class="col-sm-7 col-md-8 col-12 text-center d-block d-sm-none">
-                <div id="anim2" class="p-4"></div>
-            </div>
-
             {{-- Logo CBT --}}
             <div class="mt-4">
                 <h1 style="font-size:30px; text-transform:uppercase; color:#222; letter-spacing:1px;
